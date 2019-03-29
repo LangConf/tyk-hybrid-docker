@@ -43,13 +43,6 @@ then
         RPORT=6379
 fi
 
-REDISPW=$7
-if [ -z "$7" ]
-then
-        echo "Using Redis without password"
-        REDISPW=""
-fi
-
 TYK_GW_SLAVEOPTIONS_GROUPID=$8
 if [ -z "$8" ]
 then
@@ -69,6 +62,13 @@ if [ -z "$10" ]
 then
         echo "Not using db app tags config"
         TYK_GW_DBAPPCONFOPTIONS_TAGS=""
+fi
+
+REDISPW=$11
+if [ -z "$11" ]
+then
+        echo "Using Redis without password"
+        REDISPW=""
 fi
 
 
