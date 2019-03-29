@@ -95,7 +95,6 @@ docker run --restart always -v $cwd/confs:/etc/nginx/sites-enabled \
         -e ORGID=$ORGID \
         -e APIKEY=$APIKEY \
         -e REDISHOST=$REDISHOST \
-        -e REDISPW=$REDISPW \
         -e RPORT=$RPORT \
         -e TYK_GW_SLAVEOPTIONS_GROUPID=$TYK_GW_SLAVEOPTIONS_GROUPID \
         -e TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED=$TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED \
