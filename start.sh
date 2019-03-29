@@ -48,7 +48,29 @@ if [ -z "$7" ]
 then
         echo "Using Redis without password"
         REDISPW=""
-fi 
+fi
+
+TYK_GW_SLAVEOPTIONS_GROUPID=$8
+if [ -z "$8" ]
+then
+        echo "Not assigning group ID"
+        TYK_GW_SLAVEOPTIONS_GROUPID=""
+fi
+
+TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED=$9
+if [ -z "$9" ]
+then
+        echo "Not using segmented db app config"
+        TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED=""
+fi
+
+TYK_GW_DBAPPCONFOPTIONS_TAGS=$10
+if [ -z "$10" ]
+then
+        echo "Not using db app tags config"
+        TYK_GW_DBAPPCONFOPTIONS_TAGS=""
+fi
+
 
 cwd=$(pwd)
 if [ ! -d "confs" ]; then
@@ -75,6 +97,10 @@ docker run --restart always -v $cwd/confs:/etc/nginx/sites-enabled \
         -e REDISHOST=$REDISHOST \
         -e REDISPW=$REDISPW \
         -e RPORT=$RPORT \
+        -e REDISPW=$REDISPW \
+        -e TYK_GW_SLAVEOPTIONS_GROUPID=$TYK_GW_SLAVEOPTIONS_GROUPID \
+        -e TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED=$TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED \
+        -e TYK_GW_DBAPPCONFOPTIONS_TAGS=$TYK_GW_DBAPPCONFOPTIONS_TAGS \
         -e BINDSLUG=1 \
         $IMAGE
 
