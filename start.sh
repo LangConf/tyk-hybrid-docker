@@ -43,29 +43,29 @@ then
         RPORT=6379
 fi
 
-TYK_GW_SLAVEOPTIONS_GROUPID=$8
-if [ -z "$8" ]
+TYK_GW_SLAVEOPTIONS_GROUPID=$7
+if [ -z "$7" ]
 then
         echo "Not assigning group ID"
         TYK_GW_SLAVEOPTIONS_GROUPID=""
 fi
 
-TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED=$9
-if [ -z "$9" ]
+TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED=$8
+if [ -z "$8" ]
 then
         echo "Not using segmented db app config"
         TYK_GW_DBAPPCONFOPTIONS_NODEISSEGMENTED=""
 fi
 
-TYK_GW_DBAPPCONFOPTIONS_TAGS=$10
-if [ -z "$10" ]
+TYK_GW_DBAPPCONFOPTIONS_TAGS=$9
+if [ -z "$9" ]
 then
         echo "Not using db app tags config"
         TYK_GW_DBAPPCONFOPTIONS_TAGS=""
 fi
 
-REDISPW=$11
-if [ -z "$11" ]
+REDISPW=$10
+if [ -z "$10" ]
 then
         echo "Using Redis without password"
         REDISPW=""
